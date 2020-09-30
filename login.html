@@ -1,0 +1,101 @@
+<html>
+<head>
+  <link rel="stylesheet" href="stylesheet.css">
+  
+ 
+</head>
+<body>
+
+<div class="hero">
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+
+        <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+        <button type="button" class="toggle-btn" onclick="register()">Sign In</button>
+      </div>
+
+        <div class="icons">
+          <img src="a.jpeg">
+        </div>
+          <form name="myform" id="login"class="input-group" onsubmit="return validateform()" >
+            <input type="text" class="input-field" name="name" onchange="return(trn())" placeholder="User Id" required>
+            <input type="password" class="input-field" name="password" placeholder="Enter Password" required>
+  <input type="checkbox" class="checkbox"><span>Remember Password</span>
+		
+			
+            <button type="submit" class="submit-btn">Login</button>
+			
+		
+          </form>
+
+    <form id="REGISTER" name="f1" onsubmit="return matchpass()" class="input-group" >
+        <input type="text" class="input-field"  placeholder="User Id" required>
+        <input type="email" class="input-field" placeholder="Email Id" required>
+        <input type="password" class="input-field"  name="password" placeholder="Enter Password" required>
+		<input type="password" class="input-field"  name="password2" placeholder="Confirm Password" required>
+		<p>&nbsp</p><input type="checkbox" id="myCheck" name="test" required>
+		<span>I agree to the terms and conditions</span> <p>&nbsp</p>
+      
+        <button type="submit" id="tnc" class="submit-btn" required>Register</button>
+    </form>
+</div>
+</div>
+<script type="text/javascript">
+    var x=document.getElementById("login");
+    var y=document.getElementById("REGISTER");
+    var z=document.getElementById("btn");
+
+    function register(){
+      x.style.left="-400px";
+        y.style.left="50px";
+          z.style.left="110px";
+    }
+    function login(){
+          x.style.left="50px";
+            y.style.left="450px";
+              z.style.left="0px";
+        }
+		
+	function trn() {
+	var tno = document.getElementById("tno").value;
+	if(tno.length != 5 || isNaN(tno) || tno == ""){
+		alert("Please provide valid Train Number of form #####");
+		return false;
+	}
+}
+
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.password.value;  
+  
+if (name==null || name==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+}  
+
+function matchpass(){  
+var firstpassword=document.f1.password.value;  
+var secondpassword=document.f1.password2.value;  
+  
+if(firstpassword==secondpassword){  
+return true;  
+}  
+else{  
+alert("password must be same!");  
+return false;  
+}  
+}  
+
+function myFunction() {
+  var x = document.getElementById("myCheck").required;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html>
